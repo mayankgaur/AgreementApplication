@@ -1,0 +1,48 @@
+﻿@model List<AgreementApplication.Models.AgreementDetail>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .grid-header-title
+     {
+        float:right;
+   
+    }
+</style>
+@section css {
+
+<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+
+}
+
+     @Html.ActionLink("Create", "Create")
+
+    @Html.Grid(Model).Columns(columns =>  {
+
+
+    columns.Add(u => u.ID,true);
+    columns.Add(u => u.Name).Titled("Name").Sortable(true).Filterable(true);
+    columns.Add(u => u.StartDate).Titled("Start Date").Sortable(true).Filterable(true);
+    columns.Add(u => u.EndDate).Titled("End Date").Sortable(true).Filterable(true);
+    columns.Add(u => u.Status).Titled("Status").Sortable(true).Filterable(true);
+    columns.Add(u => u.Value).Titled("Value").Sortable(true).Filterable(true);
+    columns.Add().Encoded(false).Sanitized(false).RenderValueAs(u =>
+
+    @<b>
+
+        @Html.ActionLink("Edit", "Edit", new { Id = u.ID }, 0)
+
+    </b>);
+
+})
+
+  
+
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"> </script>
+
+}
