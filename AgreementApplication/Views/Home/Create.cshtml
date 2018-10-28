@@ -24,7 +24,8 @@
             @Html.LabelFor(model => model.StartDate)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.StartDate,new { htmlAttributes = new { @class = "form-control date-picker" } })
+            @Html.TextBoxFor(model => model.StartDate,"{0:dd-MM-yyyy}",
+            new { htmlAttributes = new { @class = "form-control date-picker" } })
             @Html.ValidationMessageFor(model => model.StartDate)
         </div>
 
@@ -32,7 +33,7 @@
             @Html.LabelFor(model => model.EndDate)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.EndDate,new { htmlAttributes = new { @class = "form-control date-picker" } })
+            @Html.TextBoxFor(model => model.EndDate, "{0:dd-MM-yyyy}", new { htmlAttributes = new { @class = "form-control date-picker" } })
             @Html.ValidationMessageFor(model => model.EndDate)
         </div>
 

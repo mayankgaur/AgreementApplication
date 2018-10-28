@@ -17,10 +17,12 @@ namespace AgreementApplication.Models
 
         [Required(ErrorMessage = "Start Date is Required")]
         [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString ="{0:dd-MM-yyyy}")]
         public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "End Date is Required")]
         [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime EndDate { get; set; }
 
         [Required(ErrorMessage = "Value is Required")]

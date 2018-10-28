@@ -35,6 +35,7 @@ namespace AgreementApplication.Repository
         {
             entities.Attach(objRecord);
             context.Entry(objRecord).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
         }
         private bool disposed = false;
 
